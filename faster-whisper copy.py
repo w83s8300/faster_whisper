@@ -5,7 +5,7 @@ from pytube import YouTube
 import os
 import ffmpeg
 import g4f
-video_url = "https://www.youtube.com/watch?v=Qkq9kWgYKug"
+video_url = "https://www.youtube.com/watch?v=40dJS_LC6S8"
 output_folder = "save"
 output_filename = "output.mp3"
 # 創建 YouTube 物件
@@ -46,7 +46,7 @@ with open(os.path.join(output_folder, output_txt_file), "w", encoding="utf-8") a
     for segment in segments:
         start_time_in_minutes =str(int((segment.start)//60))+"分"+str(int((segment.start)) % 60)+"秒"
         end_time_in_minutes =str(int((segment.end)//60))+"分"+str(int((segment.end) % 60))+"秒"
-        print("[%s 分鐘 -> %s 分鐘] %s" % (start_time_in_minutes,end_time_in_minutes,segment.text))
+        print("[%s  -> %s ] %s" % (start_time_in_minutes,end_time_in_minutes,segment.text))
         content+=("[%.2fs -> %.2fs] %s\n" % (segment.start, segment.end,segment.text))
         f.write("[%.2fs -> %.2fs] %s\n" % (segment.start, segment.end,segment.text))
 # 刪除轉換後的音樂檔案（MP3）
